@@ -5,9 +5,9 @@
 ## Overview 
 
 The system follows the basic RAG (retrival augmented generation) approach to let users 
-query information from an atlassian conluence wiki system using a LLM. The implementation
-is based on LangChain, Ollama, Qdrant, and (obviously) docker. We used fastapi for seeting up interfaces and 
-streamlit to build a small GUI. 
+query information from an atlassian confluence wiki system using a LLM. The implementation
+is based on [LangChain](https://www.langchain.com/), [Ollama](https://github.com/ollama/ollama), [Qdrant](https://qdrant.tech/), and (obviously) [Docker](https://www.docker.com/).We used [FastAPI](https://fastapi.tiangolo.com/) for seeting up interfaces and 
+[Streamlit](https://streamlit.io/) to build a small GUI. 
 
 Currently, the system architecture looks like follows:
 
@@ -72,4 +72,8 @@ docker run -d -p 8501:8501 -v $(pwd)/feedback:/app/feedback wikibot/frontend:0.1
 - Including metadata in the context or choosing context based on metadata 
 - Further investigation of the LLM; Accumulation of old representations in the model's latent space should be
 avoided. 
+
+**Application/deployment-related**
+- Move variables like IP addersses etc. to a shared config
+- Use runner to automatically create embeddigs
 
