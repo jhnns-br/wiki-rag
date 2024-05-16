@@ -6,12 +6,12 @@
 
 The system follows the basic RAG (retrival augmented generation) approach to let users 
 query information from an atlassian confluence wiki system using a LLM. The implementation
-is based on [LangChain](https://www.langchain.com/), [Ollama](https://github.com/ollama/ollama), [Qdrant](https://qdrant.tech/), and (obviously) [Docker](https://www.docker.com/).We used [FastAPI](https://fastapi.tiangolo.com/) for seeting up interfaces and 
+is based on [LangChain](https://www.langchain.com/), [Ollama](https://github.com/ollama/ollama), [Qdrant](https://qdrant.tech/), and (obviously) [Docker](https://www.docker.com/). We used [FastAPI](https://fastapi.tiangolo.com/) for seeting up interfaces and 
 [Streamlit](https://streamlit.io/) to build a small GUI. 
 
 Currently, the system architecture looks like follows:
 
-![System architecture](system architecture.drawio.png)
+![System architecture](https://github.com/jhnns-br/wiki-rag/blob/main/images/system%20architecture.drawio.png)
 
 The *embedder* module may be run sporadically to access the wiki's content, split it 
 into chunks, embedde these chunks using an embedding model, and store chunks and 
@@ -23,7 +23,7 @@ generates an answer. These functions are offerred via REST API.
 
 The *frontend* simply offers a streamlit-built GUI for the user, which looks like this:
 
-![Sneak peak](sneak peak.png)
+![Sneak peak](https://github.com/jhnns-br/wiki-rag/blob/main/images/sneak%20peak.png))
  
 ## Setup
 ### Indexing with the embedder module
