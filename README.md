@@ -6,7 +6,9 @@
 
 The system follows the basic RAG (retrival augmented generation) approach to let users 
 query information from an atlassian confluence wiki system using a LLM. The implementation
-is based on [LangChain](https://www.langchain.com/), [Ollama](https://github.com/ollama/ollama), [Qdrant](https://qdrant.tech/), and (obviously) [Docker](https://www.docker.com/). We used [FastAPI](https://fastapi.tiangolo.com/) for seeting up interfaces and 
+is based on [LangChain](https://www.langchain.com/), [Ollama](https://github.com/ollama/ollama), 
+[Qdrant](https://qdrant.tech/), and (obviously) [Docker](https://www.docker.com/). 
+We used [FastAPI](https://fastapi.tiangolo.com/) for seeting up interfaces and 
 [Streamlit](https://streamlit.io/) to build a small GUI. 
 
 Currently, the system architecture looks like follows:
@@ -18,7 +20,7 @@ into chunks, embedde these chunks using an embedding model, and store chunks and
 cooresponding embeddings in a Qdrant vector store. 
 
 The *chatter* retrives similar chunks of text from the store for a given query (question)
-and gives these chunks, togehter with the question and some more context, to *Ollama*, which then
+and gives these chunks, togehter with the question, and some more context, to *Ollama*, which then
 generates an answer. These functions are offerred via REST API. 
 
 The *frontend* simply offers a streamlit-built GUI for the user, which looks like this:
@@ -74,6 +76,6 @@ docker run -d -p 8501:8501 -v $(pwd)/feedback:/app/feedback wikibot/frontend:0.1
 avoided. 
 
 **Application/deployment-related**
-- Move variables like IP addersses etc. to a shared config
-- Use runner to automatically create embeddigs
+- Move variables like IP addresses etc. to a shared config
+- Use runner to automatically create embeddings
 
